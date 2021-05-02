@@ -1,0 +1,236 @@
+<!DOCTYPE html
+<html>
+<head>
+
+<title>Calculator</title>
+
+<style type="text/css">
+
+.container
+{
+	align-content: center;
+	margin-top: 20px;
+	height: 35px;
+	width: 35px;
+
+}
+
+h1
+{
+	text-align: center;
+}
+
+.pageCenter 
+{
+	margin: 0 auto;
+	max-width: 500px;
+	position: relative;
+	
+}
+.absoluteContainer
+ {
+	position: absolute;
+	left: 50%;
+	top: 10px;
+	width: 200px;
+	margin-left: -100px;
+	
+}
+
+input 
+{
+    height: 50px;
+    background-color: grey;
+    width: 234px;
+    text-align: center;
+    color: black;
+    font-size: large;
+}
+
+::placeholder
+ { 
+  color: black;
+  
+ }
+button 
+{
+    font-size: 14px;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+  
+    background-color: grey;
+    
+}
+.calculator
+{
+	border: solid grey 4px;
+	width: 238px;
+    border-radius: 4px
+}
+table,td
+{
+align-items: center;
+text-align: center;
+}
+
+</style>
+
+
+<script type = "text/javascript">
+
+	function updateTextbox(value)
+{
+		document.getElementById("screen").value += value;
+}
+	
+		function result()
+	{
+
+        try
+		{
+			var res = [];
+		    var answer;
+
+		if(document.getElementById("screen").value.includes("+"))
+		{
+
+		res = document.getElementById("screen").value.split('+');
+		if(isNaN(res[0]) || isNaN(res[1]))
+
+		{
+
+			alert("Please enter a number");
+			location.reload();
+		}
+		else
+		{
+			return parseInt(res[0]) + parseInt(res[1]);
+		}
+		
+		}
+		
+		 if(document.getElementById("screen").value.includes("-"))
+		{
+		res = document.getElementById("screen").value.split('-');
+		if (isNaN(res[0]) || isNaN(res[1]))
+		 {
+		 	alert("Please enter a number");
+		 	location.reload();
+		 }
+		 else
+		 {
+             return parseInt(res[0]) - parseInt(res[1]);
+		 }
+		
+		}
+		
+
+		 if(document.getElementById("screen").value.includes("/"))
+		 	{
+		 	res = document.getElementById("screen").value.split('/');
+
+		 	if(isNaN(res[0]) || isNaN(res[1]))
+		 	{
+		 		alert("Please enter a number");
+		 		location.reload();
+		 		return 0;
+		 	
+		     }
+			else if (res[1]==0)  
+			{
+				alert("Division by zero!!Please enter a non-zero number");
+				location.reload();
+
+			}
+			else
+			{
+                   return parseInt(res[0]) / parseInt(res[1]);
+
+			}
+		    
+			}
+			
+		
+		if (document.getElementById("screen").value.includes("*")) 
+		{	
+		
+		res = document.getElementById("screen").value.split('*');
+
+		if (isNaN(res[0]) || isNaN(res[1]))
+		 {
+		 	alert("Please enter a number");
+		 }
+		 else
+		 {
+             return parseInt(res[0]) * parseInt(res[1]);
+		 }
+}
+}
+	     catch(err)
+	     {
+	     	alert("Invalid");
+	     }	
+		
+	}
+	function calculate()
+	{	
+
+      var a = result()
+      document.getElementById('screen').value = a;
+      document.getElementById("screen").value = eval(document.getElementById("screen").value); 
+    }
+	
+	function reset()
+	{
+		document.getElementById("screen").value = '';
+	}
+
+	</script>
+
+</head>
+<body>
+	<div >
+		<h1>A SIMPLE CALCULATOR PROGRAM</h1>
+		<div class="pageCenter"> 	
+		<div class="absoluteContainer">
+		<div  class="Calculator">
+		<table align="center">
+			<tr>
+				<td><input type="text" name="screen" id="screen" placeholder="0" value="" disabled/></td>
+				<table>
+					<tr>
+						<td><button onclick="updateTextbox('1')">1</button></td>
+						<td><button onclick="updateTextbox('2')">2</button></td>
+						<td><button onclick="updateTextbox('3')">3</button></td>
+						<td><button onclick="updateTextbox('/')">/</button></td>
+					</tr>
+				</table>
+			</tr>
+		</table>
+		<table>
+		 	<tr>
+				<td><button onclick="updateTextbox('4')">4</button></td>
+				<td><button onclick="updateTextbox('5')">5</button></td>
+				<td><button onclick="updateTextbox('6')">6</button></td>
+				<td><button onclick="updateTextbox('*')">*</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="updateTextbox('7')">7</button></td>
+				<td><button onclick=" updateTextbox('8')">8</button></td>
+				<td><button onclick=" updateTextbox('9')">9</button></td>
+				<td><button onclick=" updateTextbox('-')">-</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="reset()">C</button></td>
+				<td><button onclick="updateTextbox('0')">0</button></td>
+				<td><button onclick="calculate();">=</button></td>
+				<td><button onclick="updateTextbox('+')">+</button></td>
+			</tr>
+		</table>
+	</div>
+</div>
+	</div>
+	</div>
+</body>
+</html>
