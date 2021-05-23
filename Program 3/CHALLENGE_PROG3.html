@@ -1,1 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Photo Rating</title>
+<style>
+	img
+	{
+		position: relative;
+		left:47px;
+		width: 456px;
+		height: 275px;
+	}
+	
+     figure
+     {
+     	width: 23px;
+     	height: 20px;
+     }
+	figcaption
+	{
+		height: 10px;
+	}
 
+
+p 
+{
+position: absolute;
+bottom: 56%;
+left: 60%;
+transform: translate(-18%, -40%);
+}
+
+body
+{
+	font-family: times;
+    font-weight: 549;
+}
+.Rating--Star 
+{
+	position: relative;
+    left: -3px;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+}
+  
+u
+{
+   color: blue;
+}
+</style>
+</head>
+<body>
+<header>
+	<a href="home.html">Home</a>
+	<script>
+		document.write("|");
+	</script>
+	<a href="places.html">Places</a>
+	<script>
+		document.write("|");
+	</script>
+	<a href="gallery.html">Gallery</a>
+	<script>
+		document.write("|");
+	</script>
+	<a href="about_us.html">About Us</a>
+	<script>
+		document.write("|");
+	</script>
+	<a href="search.html">Search</a>
+	
+</header>
+	<h1>Malpe Beach,Udupi</h1>
+	
+	<img border="0" src="sunset.jpg" />
+	</br>
+</br>
+	<article> By <u>Brinda Ramesh</u></article>
+     <pre></pre>
+     <article>Malpe is a natural port in the Udupi District in Karnataka,India.Located on the mouth of the Malpe River about six kilometers to the west of Udupi,it is an important port and a major fishing harbor on the Karnataka coast.The town of Malpe is associated largely with settelments of the Mogaveera fisherman community</article>
+   </br>
+     <section>Year: 2019</section>
+     
+     <section>Date: 6th October</section>
+     </br>
+     
+     <article><strong>Reviews</strong></article>
+ 
+      <div class="Rating">
+      	</br>
+        <article><strong>We missed it! </strong><br>Cifha
+  <img src="star-orange.png" class="Rating--Star Rating--Star__active">
+  <img src="star-orange.png" class="Rating--Star Rating--Star__active">
+  <img src="star-orange.png" class="Rating--Star Rating--Star__active">
+  <img src="star-orange.png" class="Rating--Star Rating--Star__active">
+  <img src="star-orange.png" class="Rating--Star Rating--Star__active">
+</article>
+</br>
+<article><small>Such a lovely visuals we missed it.</small></article>
+<hr>
+<article><strong>Love Click</strong><br>Jaya
+  <img src="star-orange.png" class="Rating--Star Rating--Star__active">
+  <img src="star-orange.png" class="Rating--Star Rating--Star__active">
+  <img src="star-orange.png" class="Rating--Star Rating--Star__active">
+  <img src="star-orange.png" class="Rating--Star Rating--Star__active">
+  <img src="star-white.png" class="Rating--Star">
+</article>
+</br>
+<article><small>That was an amazing evening,Vidya.</small></article>
+<hr>
+<article><strong>Nice</strong><br>Fiona
+  <img src="star-orange.png" class="Rating--Star Rating--Star__active">
+  <img src="star-orange.png" class="Rating--Star Rating--Star__active">
+  <img src="star-orange.png" class="Rating--Star Rating--Star__active">
+  <img src="star-white.png" class="Rating--Star">
+  <img src="star-white.png" class="Rating--Star">
+</article>
+</br>
+<article><small>Good one.</small></article>
+<hr>
+</div>
+<footer>
+	<a href="home.html">Home</a>
+	<script>
+		document.write("|");
+	</script>
+	<a href="places.html">Places</a>
+	<script>
+		document.write("|");
+	</script>
+	<a href="gallery.html">Gallery</a>
+	<script>
+		document.write("|");
+	</script>
+	<a href="about_us.html">About Us</a>
+	
+</footer>
+</br>
+ <footer><i>Copyright @ 2020 My Costal Stay</i></footer>    	
+<p id="demo"></p>
+<script>
+var var1 = setInterval(inTimer, 500);
+var fs = 5; //font size
+var ids = document.getElementById("demo");
+function inTimer()
+{
+ids.innerHTML = 'Ocean Therapy';
+ids.setAttribute('style', "font-size: " + fs + "px; color: red");
+fs += 5;
+if (fs >= 50)
+{
+clearInterval(var1); //paused
+var2 = setInterval(deTimer, 500);
+
+}
+}
+function deTimer() //fs = 50px
+{
+fs -= 5;
+ids.innerHTML = 'Ocean Therapy';
+ids.setAttribute('style', "font-size: " + fs + "px; color: red");
+if (fs == 5)
+{
+clearInterval(var2); //paused
+var1 = setInterval(inTimer, 500);
+}
+}
+</script>
+</body>
+</html>
